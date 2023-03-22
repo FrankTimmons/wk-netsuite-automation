@@ -76,13 +76,15 @@ As a TEMP Data Entry Clerk at Wieden + Kennedy, I aimed to leverage my programmi
     <li>Page should look something like this: </li>
     <img src='https://i.postimg.cc/vH0QW4W1/Screenshot-2023-03-21-144304.png' alt='picture of the page'/>
 
-    If it doesn't, try logging in and out again, and make sure you're logged out on all tabs. 
+    If it doesn't, try logging in and out again until that link gives you a page like that. 
     <li>DONT log in, and copy the long link that is now in the browser search bar</li>
     <li>Put the link in your .env file after 'OKTA_LOGIN=' here:</li>
 
     ```env
     OKTA_LOGIN=___ <--
     ```
+
+    *IMPORTANT NOTE* This link will expire after ~1hr, so you will have to redo these steps if you have to start the script over
     </ol>
     </details> 
 7. Make sure you've filled in all your info in the .env file in the same folder as this script. The file should look something like this (replace everything after the '=' signs with your own information):
