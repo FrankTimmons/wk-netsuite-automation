@@ -8,7 +8,7 @@
 * Selenium
 
 ## Description
-As a TEMP Data Entry Clerk at Wieden + Kennedy, I wanted to bring some of my programming background to the position and streamline the workflow.  My past experience was mostly Javascript and C#, but I wanted to learn Python and Selenium so I took this as an opportunity to do so.  After my second day, I had a script running that could go through the whole process of downloading a single pdf.  Soon after I was able to get it to loop through and automatically download the thousands of documents that the company needed.  After I got it working I streamlined it as much as I thought possible through the implementation of an ENV file and other small tweaks in the logic of the code. 
+As a TEMP Data Entry Clerk at Wieden + Kennedy, I aimed to leverage my programming background and optimize the task they threw my way. While I had extensive experience in Javascript and C#, I seized the opportunity to expand my skillset by learning Python and Selenium. In just my second day, I had developed a script capable of automating the process of downloading a single pdf. With continued effort, I successfully adapted the script to effortlessly download thousands of documents, effectively meeting the company's needs. To further enhance the script's efficiency, I implemented an ENV file and made subtle yet effective adjustments to the code's logic.
 
 ## Setup
 
@@ -24,8 +24,7 @@ As a TEMP Data Entry Clerk at Wieden + Kennedy, I wanted to bring some of my pro
     <li>Click 'Print'.</li>
     <li>Wait around three minutes for the PDF to open and save it to a new folder on your desktop.</li>
     </ol>
-    </details>
-    <br>  
+    </details> 
 2. Clone this repository
 2. Download [Python](https://www.python.org/downloads/) and add it to your path.  
 3. Download the most recent [Chromedriver](https://chromedriver.chromium.org/downloads) version and add it to a folder on your path.  
@@ -86,7 +85,6 @@ As a TEMP Data Entry Clerk at Wieden + Kennedy, I wanted to bring some of my pro
     ```
     </ol>
     </details> 
-    <br>
 7. Make sure you've filled in all your info in the .env file in the same folder as this script. The file should look something like this (replace everything after the '=' signs with your own information):
     ```env
     USERNAME=first.last
