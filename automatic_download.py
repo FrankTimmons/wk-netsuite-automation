@@ -1,4 +1,5 @@
 import os
+import os.path
 import time
 from time import sleep
 from selenium.webdriver.support.ui import WebDriverWait
@@ -13,6 +14,7 @@ load_dotenv()
 USERNAME = os.getenv('USERNAME')
 PASSWORD = os.getenv('PASSWORD')
 OKTA_LOGIN = os.getenv('OKTA_LOGIN')
+CATEGORY = os.getenv('CATEGORY')
 CATEGORY_XPATH = os.getenv('CATEGORY_XPATH')
 STARTING_DOC_NUM = int(os.getenv('STARTING_DOC_NUM'))
 ENDING_DOC_NUM = int(os.getenv('ENDING_DOC_NUM'))
@@ -29,6 +31,12 @@ options.add_experimental_option('prefs', {
 })
 
 with uc.Chrome(options=options) as driver:
+    # Open a text file and write the number 1.  We do this to keep track of the files we've downloaded.  Since you should download the first page of any category manually, we'll have the script start by taking note of that.
+    if (os.path.exists(f'{CATEGORY}.txt') == False):
+        with open(f'{CATEGORY}.txt', 'w') as f:
+            f.write('1')
+            f.write('\n')
+
     # Establish our starting document page
     doc_num_page = STARTING_DOC_NUM
     # Open URL to google login
@@ -73,7 +81,7 @@ with uc.Chrome(options=options) as driver:
 
         # Wait for the page to load
         # Record the original document that is stored in two variables, so when it changes we can compare and know if we're ready to click mark all
-        driver.implicitly_wait(25)
+        driver.implicitly_wait(45)
         old_doc = driver.find_element(By.XPATH, '//*[@id="itemrow0"]/td[3]').text
         new_doc = driver.find_element(By.XPATH, '//*[@id="itemrow0"]/td[3]').text
 
@@ -96,7 +104,7 @@ with uc.Chrome(options=options) as driver:
             
         driver.find_element(By.XPATH, '//*[@id="markall"]' ).click()
 
-        # Click the print buttton which opens download in a new window
+        # Click the print buttton which opens download in a new window.  POSSIBLE EDIT LOCATION
         driver.find_element(By.XPATH, '//*[@id="btn_multibutton_nl_print"]' ).click()
 
         # Wait for the new window or tab
@@ -108,14 +116,14 @@ with uc.Chrome(options=options) as driver:
                 driver.switch_to.window(window_handle)
                 break
 
-        # Set the average time of the download to wait and check if it is done.
-        time.sleep(180)
-
         # Set up a while loop that checks the amount of files in the folder every 15 seconds. If it's 1 greater than when we started, we know the file downloaded
         while True: 
             new_file_amount = len(os.listdir(DOWNLOAD_DIR))
             if (new_file_amount == (original_file_amount + 1)):
-                print(doc_num_page_arg)
+                # Take note of the file we've just downloaded in our text file.
+                with open(f'{CATEGORY}.txt', 'a') as f:
+                    f.write(str(doc_num_page))
+                    f.write('\n')
                 break
             else:
                 time.sleep(15)
