@@ -121,7 +121,7 @@ As a TEMP Data Entry Clerk at Wieden + Kennedy, I aimed to leverage my programmi
     ```
     Make sure to replace all slashes with a double backslash like the example above.
 
-9. There are two things you will have to edit in the 'automatic_download.py' script itselfthe XPATH for the print button.  When on the page for the category you are printing, take note of how the print button looks.  There are two options.  
+9. The second is the XPATH for the print button.  When on the page for the category you are printing, take note of how the print button looks.  There are two options.  
 Option 1:  
     <img src='https://i.postimg.cc/4ysXmNnz/Screenshot-2023-03-23-101444.png' alt='picture of the page'/>  
 Option 2:  
