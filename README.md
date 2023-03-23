@@ -41,7 +41,7 @@ As a TEMP Data Entry Clerk at Wieden + Kennedy, I aimed to leverage my programmi
     <li>Click on the category of document you want to print.</li>
     <li>There should be a dropdown on the right to select which page of documents you want to be printing. The largest number at the end is the ENDING_DOC_NUM, and the number at the start is the STARTING_DOC_NUM </li>
 
-    *IMPORTANT NOTE* You must have the STARTING_DOC_NUM be at least 101, otherwise the script will not work.  This should be fine since you need to manually run through the process once for each category anyway!
+    *IMPORTANT NOTE*: You must have the STARTING_DOC_NUM be at least 101, otherwise the script will not work.  This should be fine since you need to manually run through the process once for each category anyway!
 
     <img src='https://i.postimg.cc/xd85VKRm/Screenshot-2023-03-23-101401.png' alt='picture of the page'/>
     
@@ -101,7 +101,7 @@ As a TEMP Data Entry Clerk at Wieden + Kennedy, I aimed to leverage my programmi
     OKTA_LOGIN=___ <--
     ```
 
-    *IMPORTANT NOTE* This link will expire after ~1hr, so you will have to redo these steps if you have to start the script over
+    *IMPORTANT NOTE*: This link will expire after ~1hr, so you will have to redo these steps if you have to start the script over
     </ul>
     </details> 
 7. Make sure you've filled in all your info in the .env file in the same folder as this script. The file should look something like this (replace everything after the '=' signs with your own information):
@@ -115,13 +115,13 @@ As a TEMP Data Entry Clerk at Wieden + Kennedy, I aimed to leverage my programmi
     ENDING_DOC_NUM=5629
     ```
 
-8. There are two things you will have to edit in the 'automatic_download.py' script itself is your download directory.  The first is on line ~23 of the script, place your filepath after 'DOWNLOAD_DIR = ' like so:
+8. There are two things you will have to edit in the 'automatic_download.py' script itself.  The first is on line ~23 of the script, place your filepath after 'DOWNLOAD_DIR = ' like so:
     ```python
     DOWNLOAD_DIR = "C:\\Users\\user.name\\Desktop\\Folder"
     ```
     Make sure to replace all slashes with a double backslash like the example above.
 
-9. The second is the XPATH for the print button.  When on the page for the category you are printing, take note of how the print button looks.  There are two options.  
+9. There are two things you will have to edit in the 'automatic_download.py' script itselfthe XPATH for the print button.  When on the page for the category you are printing, take note of how the print button looks.  There are two options.  
 Option 1:  
     <img src='https://i.postimg.cc/4ysXmNnz/Screenshot-2023-03-23-101444.png' alt='picture of the page'/>  
 Option 2:  
